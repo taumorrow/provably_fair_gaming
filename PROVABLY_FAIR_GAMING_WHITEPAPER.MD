@@ -17,7 +17,7 @@ We present a novel framework for multiplayer gaming that eliminates trust requir
 
 This framework enables applications impossible with traditional approaches: casinos where players can mathematically verify fairness, board games with simultaneous play and zero idle time, and Nomic-style games where rules evolve democratically under formal verification.
 
-**Axiom**, our first implementation (simultaneous multiplayer Ludo), demonstrates 12x faster gameplay and 100% player engagement compared to traditional turn-based systems, while maintaining mathematical guarantees that neither players nor servers can manipulate outcomes.
+**Axiom**, our first implementation (simultaneous multiplayer Ludo), demonstrates faster gameplay and 100% player engagement compared to traditional turn-based systems, while maintaining mathematical guarantees that neither players nor servers can manipulate outcomes.
 
 ---
 
