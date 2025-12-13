@@ -1,0 +1,203 @@
+MIT License with Commercial Restriction for Provably Fair Gaming
+==================================================================
+
+Copyright (c) 2025 l0g1x
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, subject to the following conditions:
+
+================================================================================
+THIRD-PARTY IP: TAU LANGUAGE
+================================================================================
+
+IMPORTANT: Tau Language and all related intellectual property rights belong
+exclusively to IDNI AG (https://idni.org).
+
+This license covers ONLY the licensor's original innovations in provably fair
+multiplayer gaming mechanics. It does NOT grant any rights to Tau Language itself.
+
+Use of Tau Language is subject to IDNI's own license terms:
+https://github.com/IDNI/tau-lang/blob/main/LICENSE
+
+The licensor claims NO ownership over:
+- Tau Language compiler, interpreter, or runtime
+- Tau Language syntax, semantics, or specifications
+- IDNI's formal logic systems (NSO, GSSOTC, etc.)
+- Any IDNI intellectual property
+
+This software uses Tau Language under IDNI's license. All rights to Tau Language
+remain with IDNI AG.
+
+================================================================================
+RESTRICTION: PROVABLY FAIR MULTIPLAYER GAMING
+================================================================================
+
+COMMERCIAL USE OF THE FOLLOWING IS PROHIBITED without explicit written license:
+
+"Provably Fair Multiplayer Gaming Technology" means:
+
+1. Multi-party XOR-based cryptographic seed generation for randomness in gaming applications
+2. Simultaneous commitment-based multiplayer game mechanics
+3. Temporal constraint satisfaction for game state validation
+4. Real-time formal verification of game moves using constraint solvers
+5. Collision resolution via mathematical constraint solving
+6. Any combination of the above for multiplayer gaming applications
+
+PROHIBITED COMMERCIAL USES (without license):
+
+- Operating online casinos, gambling platforms, or betting services
+- Providing provably fair gaming as a commercial service
+- Integration into commercial gaming products or platforms
+- White-label gaming solutions using this technology
+- Any revenue-generating deployment of provably fair multiplayer gaming
+
+This restriction applies ONLY to provably fair multiplayer gaming technology.
+All other uses of this software remain unrestricted under standard MIT terms.
+
+================================================================================
+EXCEPTION: TAU NET ECOSYSTEM
+================================================================================
+
+The above restriction does NOT apply to deployments on Tau Net blockchain.
+
+YOU MAY use this technology commercially on Tau Net IF:
+
+1. Application executes on Tau Net blockchain infrastructure
+2. Core game logic uses Tau Language for verification
+3. Attribution is maintained: "Powered by [Your Name]'s provably fair tech"
+4. Source code modifications remain open source
+
+================================================================================
+NON-RESTRICTED USES
+================================================================================
+
+The following uses are NOT restricted and remain under standard MIT license:
+
+✓ Educational and research purposes
+✓ Personal non-commercial projects  
+✓ Other demos and applications in this repository (non-gaming)
+✓ Software development tools and utilities
+✓ Academic publications and studies
+✓ Open source contributions to this project
+
+Use for learning Tau Language, constraint programming, formal verification,
+or any other non-gaming application is fully permitted.
+
+================================================================================
+COMMERCIAL LICENSE
+================================================================================
+
+For commercial use of provably fair multiplayer gaming outside Tau Net:
+
+Contact: taumorrow@gmail.com
+Subject: "Provably Fair Gaming License"
+
+================================================================================
+PATENT NOTICE
+================================================================================
+
+The licensor reserves all patent rights to the provably fair multiplayer gaming
+innovations described above (NOT to Tau Language itself, which belongs to IDNI).
+
+These gaming innovations may be subject to patent protection and include:
+- Multi-party XOR seed generation for gaming
+- Simultaneous commitment-based game mechanics
+- Novel collision resolution methods
+- Integration patterns for real-time constraint verification in games
+
+The licensor reserves the right to file patent applications for these innovations.
+Commercial use of these gaming innovations outside authorized channels may
+constitute patent infringement if patents are granted.
+
+CLARIFICATION: This notice does NOT claim any rights over Tau Language,
+IDNI technologies, or general constraint solving methods. It applies ONLY to
+the specific gaming applications and mechanics developed by the licensor.
+
+================================================================================
+ENFORCEMENT
+================================================================================
+
+Unauthorized commercial use of provably fair multiplayer gaming technology
+constitutes:
+1. Breach of this license agreement
+2. Potential patent infringement  
+3. Copyright violation
+
+The licensor reserves all legal remedies including injunctive relief and
+damages.
+
+GOOD FAITH PROVISION:
+Inadvertent violations will be given 30-day cure period before legal action.
+
+================================================================================
+STANDARD MIT LICENSE TERMS
+================================================================================
+
+For all non-restricted uses, the standard MIT License applies:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+LICENSE MODIFICATION
+================================================================================
+
+The licensor reserves the right to change the license terms for FUTURE versions
+of this software at any time without notice.
+
+IMPORTANT CLARIFICATIONS:
+
+1. EXISTING VERSIONS remain under their original license
+   - If you obtained version 1.0 under MIT, version 1.0 stays MIT for you
+   - License changes apply only to NEW releases
+
+2. FUTURE VERSIONS may have different terms
+   - The licensor may change to AGPL, proprietary, or any other license
+   - The licensor may remove or add restrictions
+   - The licensor may change commercial licensing terms
+
+3. NO RETROACTIVE CHANGES
+   - License changes are not retroactive
+   - Previously granted rights cannot be revoked
+   - Existing deployments remain valid under original terms
+
+4. VERSION-SPECIFIC LICENSING
+   - Each release specifies its license in the LICENSE file
+   - Check the LICENSE file in the specific version you're using
+   - Git tags indicate which license applies to which version
+
+RECOMMENDATION:
+If you're building on this software, pin to a specific version/commit
+to ensure license stability.
+
+================================================================================
+SUMMARY
+================================================================================
+
+┌─────────────────────────────────────────────────────────────┐
+│  USE CASE                          │  LICENSE REQUIRED?     │
+├─────────────────────────────────────────────────────────────┤
+│  Learning / Research               │  ✗ No (MIT)            │
+│  Personal hobby project            │  ✗ No (MIT)            │
+│  Tau Net commercial gaming         │  ✗ No (free exception) │
+│  Non-gaming commercial use         │  ✗ No (MIT)            │
+│  Commercial casino (not Tau Net)   │  ✓ Yes (contact us)    │
+│  Gaming-as-a-Service               │  ✓ Yes (contact us)    │
+└─────────────────────────────────────────────────────────────┘
+
+Questions? taumorrow@gmail.com
+
+================================================================================
+
+Version 1.0 - December 2025
