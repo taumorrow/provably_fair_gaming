@@ -16,11 +16,13 @@ parts of it that name the files and releases of tau-lang-demos:
    tau-lang-demos; none of those files is in this repository. The Materials of this repository are Tutorial Materials in the
    sense of section 1 of the full text (the default class). The paper named in sections 0 and 4 of the full text is the
    paper with DOI 10.5281/zenodo.23163643. The file `PROVABLY_FAIR_GAMING_WHITEPAPER.MD` is an earlier account of the
-   method by the same author and is a Material of this repository under these terms.
+   method by the same author and is a Material of this repository under these terms. The folder `the-round-as-a-formula/`
+   and every file in it are not Materials; they are licensed under Creative Commons BY-NC-ND 4.0, as stated in
+   `the-round-as-a-formula/LICENSE.md`.
 
-2. What the Materials are (section 4 of the full text). This repository contains a document. It contains no specification
-   files, no part specifications, no wiring table, no queries and no records. This license makes no statement that any
-   system is fair, secure, or free of operator influence.
+2. What the Materials are (section 4 of the full text). The Materials of this repository are documents. They contain no
+   specification files, no part specifications, no wiring table, no queries and no records. This license makes no
+   statement that any system is fair, secure, or free of operator influence.
 
 3. All other parts of the full text apply as written, including the definitions in section 1 (among them "Commercial Use"
    and "Tau-Net Ecosystem"), Tau Language and other works (section 2), the Method (section 3), the free grants (section 5),
@@ -37,6 +39,8 @@ parts of it that name the files and releases of tau-lang-demos:
      l0g1x).
    - Commit d51a050 (3 October 2026) carried the full text of the Taumorrow Demos License v3.0; that release remains under
      v3.0.
+   - Commit b9e961b (5 October 2026) carried this text without the sentence on the folder `the-round-as-a-formula/` in
+     item 1 and with item 2 worded for a repository of one document; that release remains under that wording.
    - Rights granted under those texts are not revoked by this one. If you obtained a release under an earlier license, that
      release stays under that license for you. Nothing here is retroactive.
    - Items 3 and 4 of section 10 of the full text apply: future releases may carry different terms, and each release
