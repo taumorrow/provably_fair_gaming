@@ -6,7 +6,7 @@ lines decided by the engine, and what remains trusted**
 Second, revised account of the method first described in *Provably Fair Multiplayer Gaming via Formal Verification*
 (white paper v1.02, December 2025) [18].
 
-Taumorrow · October 2026 · version 2.5 · DOI 10.5281/zenodo.23163643
+Taumorrow · October 2026 · version 2.6 · DOI 10.5281/zenodo.23189301
 
 ---
 
@@ -886,10 +886,10 @@ the white paper [18] (first version 13 December 2025, v1.02 15 December 2025); t
 Execute" in which the logic validates all moves, as the white paper describes it; a repository of demonstration files (19 December
 2025) and later states of it (from 9 July 2026), including a tutorial series on state machines as executed formulas (from 10 July
 2026); the companion text [19] (18 January 2026); the reports and pull requests IDNI/tau-lang #153–#179 (September 2026); and a licence text v3.0 in three
-public repositories of the author (3 October 2026), which describes the method in words. The supplement to be deposited with
-this record (DOI 10.5281/zenodo.23163643) holds the specification texts of the race game (§3.1), the queries of §6.4 with their verdicts, the invocation and
+public repositories of the author (3 October 2026), which describes the method in words. The supplement deposited with
+this record (DOI 10.5281/zenodo.23189301; version 2.5: 10.5281/zenodo.23163643) holds the specification texts of the race game (§3.1), the queries of §6.4 with their verdicts, the invocation and
 the games of §6.3. The sources of the in-process host, of the tools and of the operation of a game, and the logs,
-are withheld; the method is not.
+are withheld; the method is not. Version 2.6 differs from version 2.5 only in the wording of the supplement ("dice" for "die"); the specification texts, the queries and the verdicts are unchanged.
 
 A reader can reproduce, by hand, the worked run, the arithmetic of the dice and the examples of §2.5; on the public build, the
 queries of §6.4 as given in the supplement, and those of §6.5 (4 players), §6.9 and §6.10 from their description; on the named build, which is public only as

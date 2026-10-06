@@ -37,19 +37,19 @@ Each is sent as `set charvar off` followed by the line below. T stands for valid
 |---|---|---|---|---|
 | a01 mixer injective | T | T | T | the mixer is injective on bv[8] (hence a bijection) |
 | a01c demo step | F | F | F | control: the step `(x + 1) % 15` of the public demo is injective |
-| a02 die range | T | T | T | the die value `x % 6 + 1` lies in 1..6 |
-| a02c die range | F | F | F | control: the die value is at most 5 |
+| a02 dice range | T | T | T | the dice value `x % 6 + 1` lies in 1..6 |
+| a02c dice range | F | F | F | control: the dice value is at most 5 |
 | a03 seed reachable | T | T | T | for any three contributions and any seed there is a fourth contribution that gives this seed |
 | a03b seed injective | T | T | T | with three contributions fixed, the fourth maps injectively to the seed |
 | a03c seed with and | F | F | F | control: the same with `&` in place of `^` |
-| a04 sum die injective | T | T | T | sum die (five summands): a contribution in 0..5 maps injectively to the face index, for any other contributions and any carried state |
-| a04b sum die range | T | T | T | sum die (five summands): the face index is below 6 |
+| a04 sum dice injective | T | T | T | sum dice (five summands): a contribution in 0..5 maps injectively to the face index, for any other contributions and any carried state |
+| a04b sum dice range | T | T | T | sum dice (five summands): the face index is below 6 |
 | a04c copied contribution | F | F | F | control: with a copied contribution (2h) the map is injective |
 | a05 residues | T | T | T | `x % 6 = (x + 6) % 6` for x below 246 (so each residue has 42 values below 252) |
 | a05c residues | F | F | F | control: the same without the premise |
-| a06 target range | T | T | T | the target is at most 42 for every position and die value |
+| a06 target range | T | T | T | the target is at most 42 for every position and dice value |
 | a06c target never zero | F | F | F | control: the target is never 0 |
-| a06f target a function | T | T | T | two targets satisfying the target formula for the same position and die value are equal |
+| a06f target a function | T | T | T | two targets satisfying the target formula for the same position and dice value are equal |
 | a07 capture outside | T | T | T | capture formula as shipped, one opponent: a capture occurs only outside the three protected squares |
 | a07b mover stays | T | T | T | capture formula as shipped, one opponent: a moving piece is not captured |
 | a07c never captured | F | F | F | control: the capture flag is always 0 |
@@ -67,11 +67,11 @@ valid all a:bv[8] all b:bv[8] ((((a ^ (a << { 3 }:bv[8])) ^ ((a ^ (a << { 3 }:bv
 ```
 valid all a:bv[8] all b:bv[8] ((((a + { 1 }:bv[8]) % { 15 }:bv[8]) = ((b + { 1 }:bv[8]) % { 15 }:bv[8])) -> (a = b))
 ```
-**a02 die range** (expected T)
+**a02 dice range** (expected T)
 ```
 valid all x:bv[8] ((((x % { 6 }:bv[8]) + { 1 }:bv[8]) >= { 1 }:bv[8]) && (((x % { 6 }:bv[8]) + { 1 }:bv[8]) <= { 6 }:bv[8]))
 ```
-**a02c die range** (expected F)
+**a02c dice range** (expected F)
 ```
 valid all x:bv[8] (((x % { 6 }:bv[8]) + { 1 }:bv[8]) <= { 5 }:bv[8])
 ```
@@ -87,11 +87,11 @@ valid all a:bv[8] all b:bv[8] all c:bv[8] all d:bv[8] all e:bv[8] (((((a ^ b) ^ 
 ```
 valid all a:bv[8] all b:bv[8] all c:bv[8] all d:bv[8] all e:bv[8] (((((a & b) & c) & d) = (((a & b) & c) & e)) -> (d = e))
 ```
-**a04 sum die injective** (expected T)
+**a04 sum dice injective** (expected T)
 ```
 valid all a:bv[8] all b:bv[8] all c:bv[8] all s:bv[8] all h:bv[8] all g:bv[8] (((h < { 6 }:bv[8]) && (g < { 6 }:bv[8]) && ((((a % { 6 }:bv[8]) + (b % { 6 }:bv[8]) + (c % { 6 }:bv[8]) + (h % { 6 }:bv[8]) + (s % { 6 }:bv[8])) % { 6 }:bv[8]) = (((a % { 6 }:bv[8]) + (b % { 6 }:bv[8]) + (c % { 6 }:bv[8]) + (g % { 6 }:bv[8]) + (s % { 6 }:bv[8])) % { 6 }:bv[8]))) -> (h = g))
 ```
-**a04b sum die range** (expected T)
+**a04b sum dice range** (expected T)
 ```
 valid all a:bv[8] all b:bv[8] all c:bv[8] all s:bv[8] all h:bv[8] ((((a % { 6 }:bv[8]) + (b % { 6 }:bv[8]) + (c % { 6 }:bv[8]) + (h % { 6 }:bv[8]) + (s % { 6 }:bv[8])) % { 6 }:bv[8]) < { 6 }:bv[8])
 ```
@@ -160,15 +160,15 @@ Each query takes conjuncts of the specification of S1 as the same strings, with 
 
 | key | lines of the specification | expected | 44b47c42f | a739b9025 | what it says |
 |---|---|---|---|---|---|
-| e01 die range | 4 | T | T | T | the four die lines as executed: the die value lies in 1..6 |
-| e01c die range | 4 | F | F | F | control: the die value is at most 5 |
-| e02 die a function | 8 | T | T | T | two evaluations of the die lines with equal inputs and equal previous state give the same die value |
-| e03 contribution determined | 8 | T | T | T | die lines as shipped: with the other contributions and the previous state equal, equal generator states imply equal own contributions |
-| e03c contribution from die | 8 | F | F | F | control: the same conclusion from equal die values (six faces) to equal contributions (256 values) |
+| e01 dice range | 4 | T | T | T | the four dice lines as executed: the dice value lies in 1..6 |
+| e01c dice range | 4 | F | F | F | control: the dice value is at most 5 |
+| e02 dice a function | 8 | T | T | T | two evaluations of the dice lines with equal inputs and equal previous state give the same dice value |
+| e03 contribution determined | 8 | T | T | T | dice lines as shipped: with the other contributions and the previous state equal, equal generator states imply equal own contributions |
+| e03c contribution from dice | 8 | F | F | F | control: the same conclusion from equal dice values (six faces) to equal contributions (256 values) |
 | e04 target range | 2 | T | T | T | the two target lines of player 0 as executed: the target is at most 42 |
 | e04c target never zero | 2 | F | F | F | control: the target is never 0 |
-| e05 target a function | 4 | T | T | T | the two target lines: with everything they read equal (piece choice, positions, die), position read and target are equal |
-| e05c die left free | 4 | F | F | F | control: the same with the die value left free in the two copies |
+| e05 target a function | 4 | T | T | T | the two target lines: with everything they read equal (piece choice, positions, dice), position read and target are equal |
+| e05c dice left free | 4 | F | F | F | control: the same with the dice value left free in the two copies |
 | e06 capture outside | 1 | T | T | T | capture line as executed (player 0, piece 0, three opponents): a capture occurs only outside the three protected squares |
 | e07 mover stays | 1 | T | T | T | capture line: the piece that moves is not captured |
 | e08 flag two-valued | 1 | T | T | T | capture line: the capture flag is 0 or 1 |
@@ -181,15 +181,15 @@ Each query takes conjuncts of the specification of S1 as the same strings, with 
 | e13 win | 1 | T | T | T | win line as executed: the win flag is set exactly when the four new positions are 42 |
 | e13c win | 1 | F | F | F | control: the win flag is never set |
 
-**e01 die range** (expected T)
+**e01 dice range** (expected T)
 ```
 valid all vo0seed:bv[8] all vi0c:bv[8] all vi1c:bv[8] all vi2c:bv[8] all vi3c:bv[8] all vo1lfsr:bv[8] all po2next:bv[8] all vo2next:bv[8] all vo3dice:bv[8] (((vo0seed : bv[8] = vi0c ^ vi1c ^ vi2c ^ vi3c) && (vo1lfsr : bv[8] = po2next + vo0seed) && (vo2next : bv[8] = (vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) ^ ((vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dice : bv[8] = (vo2next % { #x06 } : bv[8]) + { #x01 } : bv[8])) -> ((vo3dice >= { #x01 } : bv[8]) && (vo3dice <= { #x06 } : bv[8])))
 ```
-**e01c die range** (expected F)
+**e01c dice range** (expected F)
 ```
 valid all vo0seed:bv[8] all vi0c:bv[8] all vi1c:bv[8] all vi2c:bv[8] all vi3c:bv[8] all vo1lfsr:bv[8] all po2next:bv[8] all vo2next:bv[8] all vo3dice:bv[8] (((vo0seed : bv[8] = vi0c ^ vi1c ^ vi2c ^ vi3c) && (vo1lfsr : bv[8] = po2next + vo0seed) && (vo2next : bv[8] = (vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) ^ ((vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dice : bv[8] = (vo2next % { #x06 } : bv[8]) + { #x01 } : bv[8])) -> (vo3dice <= { #x05 } : bv[8]))
 ```
-**e02 die a function** (expected T)
+**e02 dice a function** (expected T)
 ```
 valid all vo0seed:bv[8] all vi0c:bv[8] all vi1c:bv[8] all vi2c:bv[8] all vi3c:bv[8] all vo1lfsr:bv[8] all po2next:bv[8] all vo2next:bv[8] all vo3dice:bv[8] all vo0seedx:bv[8] all vi0cx:bv[8] all vi1cx:bv[8] all vi2cx:bv[8] all vi3cx:bv[8] all vo1lfsrx:bv[8] all po2nextx:bv[8] all vo2nextx:bv[8] all vo3dicex:bv[8] (((vo0seed : bv[8] = vi0c ^ vi1c ^ vi2c ^ vi3c) && (vo1lfsr : bv[8] = po2next + vo0seed) && (vo2next : bv[8] = (vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) ^ ((vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dice : bv[8] = (vo2next % { #x06 } : bv[8]) + { #x01 } : bv[8]) && (vo0seedx : bv[8] = vi0cx ^ vi1cx ^ vi2cx ^ vi3cx) && (vo1lfsrx : bv[8] = po2nextx + vo0seedx) && (vo2nextx : bv[8] = (vo1lfsrx ^ (vo1lfsrx << { #x03 } : bv[8])) ^ ((vo1lfsrx ^ (vo1lfsrx << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dicex : bv[8] = (vo2nextx % { #x06 } : bv[8]) + { #x01 } : bv[8])) -> (((vi0c = vi0cx) && (vi1c = vi1cx) && (vi2c = vi2cx) && (vi3c = vi3cx) && (po2next = po2nextx)) -> (vo3dice = vo3dicex)))
 ```
@@ -197,7 +197,7 @@ valid all vo0seed:bv[8] all vi0c:bv[8] all vi1c:bv[8] all vi2c:bv[8] all vi3c:bv
 ```
 valid all vo0seed:bv[8] all vi0c:bv[8] all vi1c:bv[8] all vi2c:bv[8] all vi3c:bv[8] all vo1lfsr:bv[8] all po2next:bv[8] all vo2next:bv[8] all vo3dice:bv[8] all vo0seedx:bv[8] all vi0cx:bv[8] all vi1cx:bv[8] all vi2cx:bv[8] all vi3cx:bv[8] all vo1lfsrx:bv[8] all po2nextx:bv[8] all vo2nextx:bv[8] all vo3dicex:bv[8] (((vo0seed : bv[8] = vi0c ^ vi1c ^ vi2c ^ vi3c) && (vo1lfsr : bv[8] = po2next + vo0seed) && (vo2next : bv[8] = (vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) ^ ((vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dice : bv[8] = (vo2next % { #x06 } : bv[8]) + { #x01 } : bv[8]) && (vo0seedx : bv[8] = vi0cx ^ vi1cx ^ vi2cx ^ vi3cx) && (vo1lfsrx : bv[8] = po2nextx + vo0seedx) && (vo2nextx : bv[8] = (vo1lfsrx ^ (vo1lfsrx << { #x03 } : bv[8])) ^ ((vo1lfsrx ^ (vo1lfsrx << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dicex : bv[8] = (vo2nextx % { #x06 } : bv[8]) + { #x01 } : bv[8])) -> ((((vi1c = vi1cx) && (vi2c = vi2cx) && (vi3c = vi3cx) && (po2next = po2nextx)) && (vo2next = vo2nextx)) -> (vi0c = vi0cx)))
 ```
-**e03c contribution from die** (expected F)
+**e03c contribution from dice** (expected F)
 ```
 valid all vo0seed:bv[8] all vi0c:bv[8] all vi1c:bv[8] all vi2c:bv[8] all vi3c:bv[8] all vo1lfsr:bv[8] all po2next:bv[8] all vo2next:bv[8] all vo3dice:bv[8] all vo0seedx:bv[8] all vi0cx:bv[8] all vi1cx:bv[8] all vi2cx:bv[8] all vi3cx:bv[8] all vo1lfsrx:bv[8] all po2nextx:bv[8] all vo2nextx:bv[8] all vo3dicex:bv[8] (((vo0seed : bv[8] = vi0c ^ vi1c ^ vi2c ^ vi3c) && (vo1lfsr : bv[8] = po2next + vo0seed) && (vo2next : bv[8] = (vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) ^ ((vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dice : bv[8] = (vo2next % { #x06 } : bv[8]) + { #x01 } : bv[8]) && (vo0seedx : bv[8] = vi0cx ^ vi1cx ^ vi2cx ^ vi3cx) && (vo1lfsrx : bv[8] = po2nextx + vo0seedx) && (vo2nextx : bv[8] = (vo1lfsrx ^ (vo1lfsrx << { #x03 } : bv[8])) ^ ((vo1lfsrx ^ (vo1lfsrx << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dicex : bv[8] = (vo2nextx % { #x06 } : bv[8]) + { #x01 } : bv[8])) -> ((((vi1c = vi1cx) && (vi2c = vi2cx) && (vi3c = vi3cx) && (po2next = po2nextx)) && (vo3dice = vo3dicex)) -> (vi0c = vi0cx)))
 ```
@@ -213,7 +213,7 @@ valid all vi4pid:bv[8] all vo4pos0:bv[8] all po100st00:bv[8] all po101st01:bv[8]
 ```
 valid all vi4pid:bv[8] all vo4pos0:bv[8] all po100st00:bv[8] all po101st01:bv[8] all po102st02:bv[8] all po103st03:bv[8] all vo5tgt0:bv[8] all vo3dice:bv[8] all vi4pidx:bv[8] all vo4pos0x:bv[8] all po100st00x:bv[8] all po101st01x:bv[8] all po102st02x:bv[8] all po103st03x:bv[8] all vo5tgt0x:bv[8] all vo3dicex:bv[8] (((((vi4pid < { #x01 } : bv[8]) ? (vo4pos0 : bv[8] = po100st00) : (vi4pid < { #x02 } : bv[8]) ? (vo4pos0 : bv[8] = po101st01) : (vi4pid < { #x03 } : bv[8]) ? (vo4pos0 : bv[8] = po102st02) : (vo4pos0 : bv[8] = po103st03))) && (((vo4pos0 = { #x2B } : bv[8]) ? (vo5tgt0 : bv[8] = { #x00 } : bv[8]) : ((vo4pos0 + vo3dice > { #x2A } : bv[8]) ? (vo5tgt0 : bv[8] = { #x2A } : bv[8]) : (vo5tgt0 : bv[8] = vo4pos0 + vo3dice)))) && (((vi4pidx < { #x01 } : bv[8]) ? (vo4pos0x : bv[8] = po100st00x) : (vi4pidx < { #x02 } : bv[8]) ? (vo4pos0x : bv[8] = po101st01x) : (vi4pidx < { #x03 } : bv[8]) ? (vo4pos0x : bv[8] = po102st02x) : (vo4pos0x : bv[8] = po103st03x))) && (((vo4pos0x = { #x2B } : bv[8]) ? (vo5tgt0x : bv[8] = { #x00 } : bv[8]) : ((vo4pos0x + vo3dicex > { #x2A } : bv[8]) ? (vo5tgt0x : bv[8] = { #x2A } : bv[8]) : (vo5tgt0x : bv[8] = vo4pos0x + vo3dicex))))) -> (((vi4pid = vi4pidx) && (po100st00 = po100st00x) && (po101st01 = po101st01x) && (po102st02 = po102st02x) && (po103st03 = po103st03x) && (vo3dice = vo3dicex)) -> ((vo4pos0 = vo4pos0x) && (vo5tgt0 = vo5tgt0x))))
 ```
-**e05c die left free** (expected F)
+**e05c dice left free** (expected F)
 ```
 valid all vi4pid:bv[8] all vo4pos0:bv[8] all po100st00:bv[8] all po101st01:bv[8] all po102st02:bv[8] all po103st03:bv[8] all vo5tgt0:bv[8] all vo3dice:bv[8] all vi4pidx:bv[8] all vo4pos0x:bv[8] all po100st00x:bv[8] all po101st01x:bv[8] all po102st02x:bv[8] all po103st03x:bv[8] all vo5tgt0x:bv[8] all vo3dicex:bv[8] (((((vi4pid < { #x01 } : bv[8]) ? (vo4pos0 : bv[8] = po100st00) : (vi4pid < { #x02 } : bv[8]) ? (vo4pos0 : bv[8] = po101st01) : (vi4pid < { #x03 } : bv[8]) ? (vo4pos0 : bv[8] = po102st02) : (vo4pos0 : bv[8] = po103st03))) && (((vo4pos0 = { #x2B } : bv[8]) ? (vo5tgt0 : bv[8] = { #x00 } : bv[8]) : ((vo4pos0 + vo3dice > { #x2A } : bv[8]) ? (vo5tgt0 : bv[8] = { #x2A } : bv[8]) : (vo5tgt0 : bv[8] = vo4pos0 + vo3dice)))) && (((vi4pidx < { #x01 } : bv[8]) ? (vo4pos0x : bv[8] = po100st00x) : (vi4pidx < { #x02 } : bv[8]) ? (vo4pos0x : bv[8] = po101st01x) : (vi4pidx < { #x03 } : bv[8]) ? (vo4pos0x : bv[8] = po102st02x) : (vo4pos0x : bv[8] = po103st03x))) && (((vo4pos0x = { #x2B } : bv[8]) ? (vo5tgt0x : bv[8] = { #x00 } : bv[8]) : ((vo4pos0x + vo3dicex > { #x2A } : bv[8]) ? (vo5tgt0x : bv[8] = { #x2A } : bv[8]) : (vo5tgt0x : bv[8] = vo4pos0x + vo3dicex))))) -> (((vi4pid = vi4pidx) && (po100st00 = po100st00x) && (po101st01 = po101st01x) && (po102st02 = po102st02x) && (po103st03 = po103st03x)) -> (vo5tgt0 = vo5tgt0x)))
 ```
@@ -265,15 +265,15 @@ valid all vo100st00:bv[8] all vo101st01:bv[8] all vo102st02:bv[8] all vo103st03:
 
 | key | lines of the specification | expected | 44b47c42f | a739b9025 | what it says |
 |---|---|---|---|---|---|
-| e01 die range | 4 | T | T | T | the four die lines as executed: the die value lies in 1..6 |
-| e01c die range | 4 | F | F | F | control: the die value is at most 5 |
-| e02 die a function | 8 | T | T | T | two evaluations of the die lines with equal inputs and equal previous state give the same die value |
-| e03 residue determined | 8 | T | T | T | sum die as executed: with the other contributions and the previous state equal, equal die values imply equal own contributions modulo 6 |
-| e03c copied contribution | 8 | F | F | F | control: with two equal (copied) contributions, equal die values imply equal contributions modulo 6 |
+| e01 dice range | 4 | T | T | T | the four dice lines as executed: the dice value lies in 1..6 |
+| e01c dice range | 4 | F | F | F | control: the dice value is at most 5 |
+| e02 dice a function | 8 | T | T | T | two evaluations of the dice lines with equal inputs and equal previous state give the same dice value |
+| e03 residue determined | 8 | T | T | T | sum dice as executed: with the other contributions and the previous state equal, equal dice values imply equal own contributions modulo 6 |
+| e03c copied contribution | 8 | F | F | F | control: with two equal (copied) contributions, equal dice values imply equal contributions modulo 6 |
 | e04 target range | 2 | T | T | T | the two target lines of player 0 as executed: the target is at most 42 |
 | e04c target never zero | 2 | F | F | F | control: the target is never 0 |
-| e05 target a function | 4 | T | T | T | the two target lines: with everything they read equal (piece choice, positions, die), position read and target are equal |
-| e05c die left free | 4 | F | F | F | control: the same with the die value left free in the two copies |
+| e05 target a function | 4 | T | T | T | the two target lines: with everything they read equal (piece choice, positions, dice), position read and target are equal |
+| e05c dice left free | 4 | F | F | F | control: the same with the dice value left free in the two copies |
 | e06 capture outside | 1 | T | T | T | capture line as executed (player 0, piece 0, three opponents): a capture occurs only outside the three protected squares |
 | e07 mover stays | 1 | T | T | T | capture line: the piece that moves is not captured |
 | e08 flag two-valued | 1 | T | T | T | capture line: the capture flag is 0 or 1 |
@@ -288,15 +288,15 @@ valid all vo100st00:bv[8] all vo101st01:bv[8] all vo102st02:bv[8] all vo103st03:
 | e14 winner count | 5 | T | T | T | the four win lines and the count line as executed: the number of winners is at most 4 |
 | e14c winner count | 5 | F | F | F | control: the number of winners is at most 3 (four winners in one tick are possible) |
 
-**e01 die range** (expected T)
+**e01 dice range** (expected T)
 ```
 valid all vo0seed:bv[8] all vi0c:bv[8] all vi1c:bv[8] all vi2c:bv[8] all vi3c:bv[8] all vi8op:bv[8] all vo1lfsr:bv[8] all po2next:bv[8] all vo2next:bv[8] all vo3dice:bv[8] (((vo0seed : bv[8] = vi0c ^ vi1c ^ vi2c ^ vi3c ^ vi8op) && (vo1lfsr : bv[8] = po2next + vo0seed) && (vo2next : bv[8] = (vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) ^ ((vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dice : bv[8] = (((vi0c % { #x06 } : bv[8]) + (vi1c % { #x06 } : bv[8]) + (vi2c % { #x06 } : bv[8]) + (vi3c % { #x06 } : bv[8]) + (vi8op % { #x06 } : bv[8]) + (po2next % { #x06 } : bv[8])) % { #x06 } : bv[8]) + { #x01 } : bv[8])) -> ((vo3dice >= { #x01 } : bv[8]) && (vo3dice <= { #x06 } : bv[8])))
 ```
-**e01c die range** (expected F)
+**e01c dice range** (expected F)
 ```
 valid all vo0seed:bv[8] all vi0c:bv[8] all vi1c:bv[8] all vi2c:bv[8] all vi3c:bv[8] all vi8op:bv[8] all vo1lfsr:bv[8] all po2next:bv[8] all vo2next:bv[8] all vo3dice:bv[8] (((vo0seed : bv[8] = vi0c ^ vi1c ^ vi2c ^ vi3c ^ vi8op) && (vo1lfsr : bv[8] = po2next + vo0seed) && (vo2next : bv[8] = (vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) ^ ((vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dice : bv[8] = (((vi0c % { #x06 } : bv[8]) + (vi1c % { #x06 } : bv[8]) + (vi2c % { #x06 } : bv[8]) + (vi3c % { #x06 } : bv[8]) + (vi8op % { #x06 } : bv[8]) + (po2next % { #x06 } : bv[8])) % { #x06 } : bv[8]) + { #x01 } : bv[8])) -> (vo3dice <= { #x05 } : bv[8]))
 ```
-**e02 die a function** (expected T)
+**e02 dice a function** (expected T)
 ```
 valid all vo0seed:bv[8] all vi0c:bv[8] all vi1c:bv[8] all vi2c:bv[8] all vi3c:bv[8] all vi8op:bv[8] all vo1lfsr:bv[8] all po2next:bv[8] all vo2next:bv[8] all vo3dice:bv[8] all vo0seedx:bv[8] all vi0cx:bv[8] all vi1cx:bv[8] all vi2cx:bv[8] all vi3cx:bv[8] all vi8opx:bv[8] all vo1lfsrx:bv[8] all po2nextx:bv[8] all vo2nextx:bv[8] all vo3dicex:bv[8] (((vo0seed : bv[8] = vi0c ^ vi1c ^ vi2c ^ vi3c ^ vi8op) && (vo1lfsr : bv[8] = po2next + vo0seed) && (vo2next : bv[8] = (vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) ^ ((vo1lfsr ^ (vo1lfsr << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dice : bv[8] = (((vi0c % { #x06 } : bv[8]) + (vi1c % { #x06 } : bv[8]) + (vi2c % { #x06 } : bv[8]) + (vi3c % { #x06 } : bv[8]) + (vi8op % { #x06 } : bv[8]) + (po2next % { #x06 } : bv[8])) % { #x06 } : bv[8]) + { #x01 } : bv[8]) && (vo0seedx : bv[8] = vi0cx ^ vi1cx ^ vi2cx ^ vi3cx ^ vi8opx) && (vo1lfsrx : bv[8] = po2nextx + vo0seedx) && (vo2nextx : bv[8] = (vo1lfsrx ^ (vo1lfsrx << { #x03 } : bv[8])) ^ ((vo1lfsrx ^ (vo1lfsrx << { #x03 } : bv[8])) >> { #x05 } : bv[8])) && (vo3dicex : bv[8] = (((vi0cx % { #x06 } : bv[8]) + (vi1cx % { #x06 } : bv[8]) + (vi2cx % { #x06 } : bv[8]) + (vi3cx % { #x06 } : bv[8]) + (vi8opx % { #x06 } : bv[8]) + (po2nextx % { #x06 } : bv[8])) % { #x06 } : bv[8]) + { #x01 } : bv[8])) -> (((vi0c = vi0cx) && (vi1c = vi1cx) && (vi2c = vi2cx) && (vi3c = vi3cx) && (vi8op = vi8opx) && (po2next = po2nextx)) -> (vo3dice = vo3dicex)))
 ```
@@ -320,7 +320,7 @@ valid all vi4pid:bv[2] all vo4pos0:bv[8] all po100st00:bv[8] all po101st01:bv[8]
 ```
 valid all vi4pid:bv[2] all vo4pos0:bv[8] all po100st00:bv[8] all po101st01:bv[8] all po102st02:bv[8] all po103st03:bv[8] all vo5tgt0:bv[8] all vo3dice:bv[8] all vi4pidx:bv[2] all vo4pos0x:bv[8] all po100st00x:bv[8] all po101st01x:bv[8] all po102st02x:bv[8] all po103st03x:bv[8] all vo5tgt0x:bv[8] all vo3dicex:bv[8] (((((vi4pid = { 0 } : bv[2]) ? (vo4pos0 : bv[8] = po100st00) : (vi4pid = { 1 } : bv[2]) ? (vo4pos0 : bv[8] = po101st01) : (vi4pid = { 2 } : bv[2]) ? (vo4pos0 : bv[8] = po102st02) : (vo4pos0 : bv[8] = po103st03))) && (((vo4pos0 = { #x2B } : bv[8]) ? (vo5tgt0 : bv[8] = { #x00 } : bv[8]) : ((vo4pos0 + vo3dice > { #x2A } : bv[8]) ? (vo5tgt0 : bv[8] = { #x2A } : bv[8]) : (vo5tgt0 : bv[8] = vo4pos0 + vo3dice)))) && (((vi4pidx = { 0 } : bv[2]) ? (vo4pos0x : bv[8] = po100st00x) : (vi4pidx = { 1 } : bv[2]) ? (vo4pos0x : bv[8] = po101st01x) : (vi4pidx = { 2 } : bv[2]) ? (vo4pos0x : bv[8] = po102st02x) : (vo4pos0x : bv[8] = po103st03x))) && (((vo4pos0x = { #x2B } : bv[8]) ? (vo5tgt0x : bv[8] = { #x00 } : bv[8]) : ((vo4pos0x + vo3dicex > { #x2A } : bv[8]) ? (vo5tgt0x : bv[8] = { #x2A } : bv[8]) : (vo5tgt0x : bv[8] = vo4pos0x + vo3dicex))))) -> (((vi4pid = vi4pidx) && (po100st00 = po100st00x) && (po101st01 = po101st01x) && (po102st02 = po102st02x) && (po103st03 = po103st03x) && (vo3dice = vo3dicex)) -> ((vo4pos0 = vo4pos0x) && (vo5tgt0 = vo5tgt0x))))
 ```
-**e05c die left free** (expected F)
+**e05c dice left free** (expected F)
 ```
 valid all vi4pid:bv[2] all vo4pos0:bv[8] all po100st00:bv[8] all po101st01:bv[8] all po102st02:bv[8] all po103st03:bv[8] all vo5tgt0:bv[8] all vo3dice:bv[8] all vi4pidx:bv[2] all vo4pos0x:bv[8] all po100st00x:bv[8] all po101st01x:bv[8] all po102st02x:bv[8] all po103st03x:bv[8] all vo5tgt0x:bv[8] all vo3dicex:bv[8] (((((vi4pid = { 0 } : bv[2]) ? (vo4pos0 : bv[8] = po100st00) : (vi4pid = { 1 } : bv[2]) ? (vo4pos0 : bv[8] = po101st01) : (vi4pid = { 2 } : bv[2]) ? (vo4pos0 : bv[8] = po102st02) : (vo4pos0 : bv[8] = po103st03))) && (((vo4pos0 = { #x2B } : bv[8]) ? (vo5tgt0 : bv[8] = { #x00 } : bv[8]) : ((vo4pos0 + vo3dice > { #x2A } : bv[8]) ? (vo5tgt0 : bv[8] = { #x2A } : bv[8]) : (vo5tgt0 : bv[8] = vo4pos0 + vo3dice)))) && (((vi4pidx = { 0 } : bv[2]) ? (vo4pos0x : bv[8] = po100st00x) : (vi4pidx = { 1 } : bv[2]) ? (vo4pos0x : bv[8] = po101st01x) : (vi4pidx = { 2 } : bv[2]) ? (vo4pos0x : bv[8] = po102st02x) : (vo4pos0x : bv[8] = po103st03x))) && (((vo4pos0x = { #x2B } : bv[8]) ? (vo5tgt0x : bv[8] = { #x00 } : bv[8]) : ((vo4pos0x + vo3dicex > { #x2A } : bv[8]) ? (vo5tgt0x : bv[8] = { #x2A } : bv[8]) : (vo5tgt0x : bv[8] = vo4pos0x + vo3dicex))))) -> (((vi4pid = vi4pidx) && (po100st00 = po100st00x) && (po101st01 = po101st01x) && (po102st02 = po102st02x) && (po103st03 = po103st03x)) -> (vo5tgt0 = vo5tgt0x)))
 ```

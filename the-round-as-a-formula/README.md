@@ -3,8 +3,7 @@
 Fair, transparent, real-time multiplayer games with the Tau language: recomputable rounds, statements about the executed
 lines decided by the engine, and what remains trusted.
 
-Taumorrow · October 2026 · version 2.5 · DOI [10.5281/zenodo.23163643](https://doi.org/10.5281/zenodo.23163643)
-(all versions: [10.5281/zenodo.23163642](https://doi.org/10.5281/zenodo.23163642))
+Taumorrow · October 2026 · version 2.6 · DOI [10.5281/zenodo.23189301](https://doi.org/10.5281/zenodo.23189301) (version 2.5: [10.5281/zenodo.23163643](https://doi.org/10.5281/zenodo.23163643); all versions: [10.5281/zenodo.23163642](https://doi.org/10.5281/zenodo.23163642))
 
 ## Files
 
@@ -26,5 +25,5 @@ its Materials.
 
 ## Citation
 
-Taumorrow. "The Round as a Formula: Fair, transparent, real-time multiplayer games with the Tau language." Version 2.5. Zenodo, 2026.
-https://doi.org/10.5281/zenodo.23163643
+Taumorrow. "The Round as a Formula: Fair, transparent, real-time multiplayer games with the Tau language." Version 2.6. Zenodo, 2026.
+https://doi.org/10.5281/zenodo.23189301
