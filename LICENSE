@@ -1,53 +1,55 @@
-# Taumorrow Demos License v3.1 — provably_fair_gaming
-## Noncommercial - Research-Free - Tau-Net-Friendly
+# Taumorrow Demos License v4.0 — provably_fair_gaming
+## Noncommercial - Research-Free
 
-Copyright (c) 2025-2026 Taumorrow (taumorrow@gmail.com). Earlier releases of this repository appeared under the name "l0g1x";
-"Taumorrow" and "l0g1x" name the same author.
+Copyright (c) 2025-2026 Taumorrow (taumorrow@gmail.com). Earlier releases of this repository appeared under the name
+"l0g1x"; "Taumorrow" and "l0g1x" name the same author.
 
-This repository is licensed under the Taumorrow Demos License v3.1. The full text is the file `LICENSE` in the repository
-taumorrow/tau-lang-demos at commit ff7edec6beca145a0146aa466f1fe3f51a640e06:
-https://github.com/taumorrow/tau-lang-demos/blob/ff7edec6beca145a0146aa466f1fe3f51a640e06/LICENSE
-That text, at that commit, is part of these terms. It applies here with the following readings, which take the place of the
-parts of it that name the files and releases of tau-lang-demos:
+This repository is licensed under the Taumorrow Demos License v4.0. The full text is the file `LICENSE` in the
+repository taumorrow/tau-lang-demos at commit 61ffb7bbb405779a3f80d5c42504986a77718624:
+https://github.com/taumorrow/tau-lang-demos/blob/61ffb7bbb405779a3f80d5c42504986a77718624/LICENSE That text, at that commit, is part of these terms. It
+applies here with the following readings, which take the place of the parts of it that name the files and releases of
+tau-lang-demos:
 
-1. Materials. In this repository, "Materials" means the file `PROVABLY_FAIR_GAMING_WHITEPAPER.MD` and every file added to
-   this repository later that does not carry its own license text. This file (`LICENSE`) states the terms. The lists of
-   Method, Tutorial and Classic Materials in section 1 of the full text, and its sentence on the archive, name files of
-   tau-lang-demos; none of those files is in this repository. The Materials of this repository are Tutorial Materials in the
-   sense of section 1 of the full text (the default class). The paper named in sections 0 and 4 of the full text is the
-   paper with DOI 10.5281/zenodo.23163643. The file `PROVABLY_FAIR_GAMING_WHITEPAPER.MD` is an earlier account of the
-   method by the same author and is a Material of this repository under these terms. The folder `the-round-as-a-formula/`
-   and every file in it are not Materials; they are licensed under Creative Commons BY-NC-ND 4.0, as stated in
-   `the-round-as-a-formula/LICENSE.md`.
+1. Materials. In this repository, "Materials" means the file `PROVABLY_FAIR_GAMING_WHITEPAPER.MD` and every file added
+   to this repository later that does not carry its own license text. This file (`LICENSE`) states the terms. The lists
+   of Method, Tutorial and Classic Materials in section 1 of the full text, and its sentence on the archive, name files
+   of tau-lang-demos; none of those files is in this repository. The Materials of this repository are Tutorial Materials
+   in the sense of section 1 of the full text (the default class). The paper named in sections 0 and 4 of the full text
+   is the paper with DOI 10.5281/zenodo.23163642 (which resolves to its current version). The file
+   `PROVABLY_FAIR_GAMING_WHITEPAPER.MD` is an earlier account of the method by the same author and is a Material of this
+   repository under these terms. The folder `the-round-as-a-formula/` and every file in it are not Materials; they are
+   licensed under Creative Commons BY-NC-ND 4.0, as stated in `the-round-as-a-formula/LICENSE.md`.
 
 2. What the Materials are (section 4 of the full text). The Materials of this repository are documents. They contain no
    specification files, no part specifications, no wiring table, no queries and no records. This license makes no
    statement that any system is fair, secure, or free of operator influence.
 
-3. All other parts of the full text apply as written, including the definitions in section 1 (among them "Commercial Use"
-   and "Tau-Net Ecosystem"), Tau Language and other works (section 2), the Method (section 3), the free grants (section 5),
-   other Commercial Use and the agreement in section 8 (sections 7 and 8), what is not claimed and the patent paragraph
-   (section 9), and the general terms (section 11).
+3. All other parts of the full text apply as written, including the definitions in section 1 (among them "Commercial
+   Use", "Training" and "takes the Materials"), Tau Language and other works (section 2), the Method (section 3), the
+   free grants (section 5), other Commercial Use and the agreement in section 8 (sections 7 and 8), what is not claimed
+   and the patent paragraph (section 9), and the general terms (section 11).
 
 4. Attribution (section 5 of the full text): keep this file with every copy or substantial portion of the Materials; its
    reference to the full text stands for "this license text". Credit "Taumorrow" in derived works, deployments and
    republications. Suggested wording: "based on work by Taumorrow (provably_fair_gaming)".
 
 5. Earlier versions (in place of section 10, items 1 and 2, of the full text).
-   - Releases of this repository before commit d51a050 remain under the license text each shipped with, if any; the last of them,
-     commit 717b5c0, carried the "MIT License with Commercial Restriction for Provably Fair Gaming" (Copyright (c) 2025
-     l0g1x).
-   - Commit d51a050 (3 October 2026) carried the full text of the Taumorrow Demos License v3.0; that release remains under
-     v3.0.
-   - Commit b9e961b (5 October 2026) carried this text without the sentence on the folder `the-round-as-a-formula/` in
-     item 1 and with item 2 worded for a repository of one document; that release remains under that wording.
-   - Rights granted under those texts are not revoked by this one. If you obtained a release under an earlier license, that
-     release stays under that license for you. Nothing here is retroactive.
+   - Releases of this repository before commit d51a050 remain under the license text each shipped with, if any; the last
+     of them, commit 717b5c0, carried the "MIT License with Commercial Restriction for Provably Fair Gaming" (Copyright
+     (c) 2025 l0g1x).
+   - Commit d51a050 (3 October 2026) carried the full text of the Taumorrow Demos License v3.0; that release remains
+     under v3.0.
+   - Commit b9e961b (5 October 2026) carried the text of v3.1 without the sentence on the folder
+     `the-round-as-a-formula/` in item 1 and with item 2 worded for a repository of one document; commit e748a03 (6
+     October 2026) carried v3.1 with that sentence. Both carried a grant for an ecosystem named there; those releases
+     remain under v3.1.
+   - Rights granted under those texts are not revoked by this one. If you obtained a release under an earlier license,
+     that release stays under that license for you. Nothing here is retroactive.
    - Items 3 and 4 of section 10 of the full text apply: future releases may carry different terms, and each release
      carries its license in the `LICENSE` file at that commit. If you build on the Materials, pin a commit.
 
 Questions: taumorrow@gmail.com
 
-Version 3.1. The date of this release is the date of the commit that adds this text to the repository.
-Earlier versions in this repository: v3.0 (3 October 2026, commit d51a050); before that, "MIT License with Commercial
-Restriction for Provably Fair Gaming" (last at commit 717b5c0).
+Version 4.0. The date of this release is the date of the commit that adds this text to the repository. Earlier versions
+in this repository: v3.1 (5/6 October 2026, commits b9e961b, e748a03); v3.0 (3 October 2026, commit d51a050); before
+that, "MIT License with Commercial Restriction for Provably Fair Gaming" (last at commit 717b5c0).
