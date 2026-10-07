@@ -4,7 +4,7 @@ Two texts by the same author on running the rounds of a multiplayer game as form
 
 | Text | Date | Where |
 |---|---|---|
-| **The Round as a Formula** — Fair, transparent, real-time multiplayer games with the Tau language: recomputable rounds, statements about the executed lines decided by the engine, and what remains trusted. Version 2.6. | October 2026 | [`the-round-as-a-formula/`](the-round-as-a-formula/) · DOI [10.5281/zenodo.23189301](https://doi.org/10.5281/zenodo.23189301) |
+| **The Round as a Formula** — Fair, transparent, real-time multiplayer games with the Tau language: recomputable rounds, statements about the executed lines decided by the engine, and what remains trusted. Version 2.7. | October 2026 | [`the-round-as-a-formula/`](the-round-as-a-formula/) · DOI [10.5281/zenodo.23208762](https://doi.org/10.5281/zenodo.23208762) |
 | **Provably Fair Multiplayer Gaming via Formal Verification** — A Framework for Trust-Reduced Gaming Using Tau Language. White paper v1.02. | December 2025 | [`PROVABLY_FAIR_GAMING_WHITEPAPER.MD`](PROVABLY_FAIR_GAMING_WHITEPAPER.MD) |
 
 *The Round as a Formula* is the second, revised account of the method first described in the white paper. It states what has
