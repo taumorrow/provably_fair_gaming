@@ -1,12 +1,12 @@
-# Taumorrow Demos License v4.1 — provably_fair_gaming
+# Taumorrow Demos License v4.2 — provably_fair_gaming
 ## Noncommercial - Research-Free
 
 Copyright (c) 2025-2026 Taumorrow (taumorrow@gmail.com). Earlier releases of this repository appeared under the author's
 other name, "l0g1x".
 
-This repository is licensed under the Taumorrow Demos License v4.1. The full text is the file `LICENSE` in the
-repository taumorrow/tau-lang-demos at commit b42374f1d4a06bfa047225aca0ee7eeaa8a248ed:
-https://github.com/taumorrow/tau-lang-demos/blob/b42374f1d4a06bfa047225aca0ee7eeaa8a248ed/LICENSE That text, at that commit, is part of these terms. It
+This repository is licensed under the Taumorrow Demos License v4.2. The full text is the file `LICENSE` in the
+repository taumorrow/tau-lang-demos at commit aa3ddbc4214ff85b7c8ffec785263261f20b5516:
+https://github.com/taumorrow/tau-lang-demos/blob/aa3ddbc4214ff85b7c8ffec785263261f20b5516/LICENSE That text, at that commit, is part of these terms. It
 applies here with the following readings, which take the place of the parts of it that name the files and releases of
 tau-lang-demos:
 
@@ -45,6 +45,8 @@ tau-lang-demos:
      remain under v3.1.
    - Commit 5fdcbb3 (7 October 2026) carried the text of v4.0, which granted no Commercial Use within the ecosystem to
      anyone; that release remains under v4.0.
+   - Commit 5a469bf (11 October 2026) carried the text of v4.1, which granted Commercial Use to IDNI AG within the
+     Network and Tau Language; that release remains under v4.1.
    - Rights granted under those texts are not revoked by this one. If you obtained a release under an earlier license,
      that release stays under that license for you. Nothing here is retroactive.
    - Items 3 and 4 of section 10 of the full text apply: future releases may carry different terms, and each release
@@ -52,7 +54,7 @@ tau-lang-demos:
 
 Questions: taumorrow@gmail.com
 
-Version 4.1. The date of this release is the date of the commit that adds this text to the repository. Earlier versions
-in this repository: v4.0 (7 October 2026, commit 5fdcbb3); v3.1 (5/6 October 2026, commits b9e961b, e748a03); v3.0 (3
-October 2026, commit d51a050); before that, "MIT License with Commercial Restriction for Provably Fair Gaming" (last at
-commit 717b5c0).
+Version 4.2. The date of this release is the date of the commit that adds this text to the repository. Earlier versions
+in this repository: v4.1 (11 October 2026, commit 5a469bf); v4.0 (7 October 2026, commit 5fdcbb3); v3.1 (5/6 October
+2026, commits b9e961b, e748a03); v3.0 (3 October 2026, commit d51a050); before that, "MIT License with Commercial
+Restriction for Provably Fair Gaming" (last at commit 717b5c0).
